@@ -42,7 +42,6 @@ import com.github.kittinunf.fuel.httpPut
 import com.google.protobuf.InvalidProtocolBufferException
 import com.google.protobuf.Message
 import com.google.protobuf.Parser
-import com.virgilsecurity.purekit.build.VersionVirgilAgent
 import com.virgilsecurity.purekit.data.ProtocolException
 import com.virgilsecurity.purekit.data.ProtocolHttpException
 import com.virgilsecurity.purekit.protobuf.build.PurekitProtos
@@ -58,7 +57,7 @@ class HttpClientProtobuf {
 
     constructor(serviceBaseUrl: String = VIRGIL_SERVICE_BASE_URL) {
         virgilAgentHeader =
-                "$VIRGIL_AGENT_PRODUCT;$VIRGIL_AGENT_FAMILY;${OsUtils.osAgentName};${VersionVirgilAgent.VERSION}"
+                "$VIRGIL_AGENT_PRODUCT;$VIRGIL_AGENT_FAMILY;${OsUtils.osAgentName};2"
         this.serviceBaseUrl = serviceBaseUrl
     }
 

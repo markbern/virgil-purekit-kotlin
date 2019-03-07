@@ -69,25 +69,25 @@ dependencies {
     testRuntime "org.junit.jupiter:junit-jupiter-engine:$versions.junit"
 }
 
-task generateVersionVirgilAgent {
-    outputs.dir "$buildDir/generated"
-    doFirst {
-        def versionFile = file("$buildDir/generated/com/virgilsecurity/purekit/build/VersionVirgilAgent.kt")
-        versionFile.parentFile.mkdirs()
-        versionFile.text =
-                """
-package com.virgilsecurity.purekit.build;
-
-object VersionVirgilAgent {
-    const val VERSION = "$project.version"
-}
-"""
-    }
-}
-
-sourceSets.main.java.srcDirs = ["${buildDir}/generated/", "src/main/kotlin"]
-
-compileKotlin.dependsOn(generateVersionVirgilAgent)
+//task generateVersionVirgilAgent {
+//    outputs.dir "$buildDir/generated"
+//    doFirst {
+//        def versionFile = file("$buildDir/generated/com/virgilsecurity/purekit/build/VersionVirgilAgent.kt")
+//        versionFile.parentFile.mkdirs()
+//        versionFile.text =
+//                """
+//package com.virgilsecurity.purekit.build;
+//
+//object VersionVirgilAgent {
+//    const val VERSION = "$project.version"
+//}
+//"""
+//    }
+//}
+//
+//sourceSets.main.java.srcDirs = ["${buildDir}/generated/", "src/main/kotlin"]
+//
+//compileKotlin.dependsOn(generateVersionVirgilAgent)
 
 compileKotlin {
     kotlinOptions.jvmTarget = "1.8"
